@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-
-import '../../widgets/cards/intro_card.dart';
+import '../../widgets/header/header.dart';
+//import '../../widgets/cards/intro_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,8 +8,21 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: IntroCard(text: "Hi! This is sample text!"),
+      body: SafeArea(
+        child: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Padding(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Header(),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
